@@ -15,3 +15,12 @@ def select_all():
     results = run_sql("SELECT * FROM artists")
     artists = [Artist(row['name'], row['id']) for row in results]
     return artists
+
+def select(id):
+    sql = "SELECT * FROM artists WHERE id = %s"
+    results = run_sql(sql, [id])
+    if len(results) > 0:
+        result = results[0]
+        artist = Artist(result['name'], result['id'] )
+        return artist
+    return None
