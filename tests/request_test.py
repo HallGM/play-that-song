@@ -12,7 +12,10 @@ class TestRequest(unittest.TestCase):
         song = Song("Song 2", blur, datetime(2020, 12, 25))
         user = User("bob", "hello my name is bob", [])
         self.time = datetime.today()
-        self.request = Request(song, user, self.time)
+        self.request = Request(song, user, self.time, 5)
+
+    def test_request_has_id(self):
+        self.assertEqual(5, self.request.id)
 
     def test_request_has_song(self):
         self.assertEqual("Song 2", self.request.song.title)

@@ -7,7 +7,10 @@ from datetime import datetime
 class TestSong(unittest.TestCase):
     def setUp(self):
         blur = Artist("Blur")
-        self.song = Song("Song 2", blur, datetime(2020, 12, 25))
+        self.song = Song("Song 2", blur, datetime(2020, 12, 25), 5)
+
+    def test_song_has_id(self):
+        self.assertEqual(5, self.song.id)
 
     def test_song_has_title(self):
         self.assertEqual("Song 2", self.song.title)
