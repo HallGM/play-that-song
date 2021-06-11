@@ -10,8 +10,6 @@ artist_repository.delete_all()
 bon_jovi = Artist("Bon Jovi")
 artist_repository.save(bon_jovi)
 
-
-
 song = Song("Livin' on  Prayer", bon_jovi, datetime(2020, 12, 25))
 song_repository.save(song)
 
