@@ -10,3 +10,10 @@ def songs():
     songs = song_repository.select_all()
     artists = artist_repository.select_all()
     return render_template("songs/index.html", songs=songs, artists=artists, edit=None)
+
+@songs_blueprint.route("/songs/<id>/edit")
+def songs_edit(id):
+    songs = song_repository.select_all()
+    artists = artist_repository.select_all()
+    edit = int(id)
+    return render_template("songs/index.html", songs=songs, artists=artists, edit=edit)
