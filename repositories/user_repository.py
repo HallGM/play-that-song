@@ -29,3 +29,7 @@ def update(user):
     sql = "UPDATE users SET username = %s, bio = %s WHERE id = %s"
     values = [user.username, user.bio, user.id]
     run_sql(sql, values)
+
+def delete(id):
+    sql = "DELETE FROM users where id = %s"
+    run_sql(sql, [id])

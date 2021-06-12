@@ -42,3 +42,8 @@ def update_user(id):
     user_repository.update(user)
     return redirect(f"/users/{id}")
     
+# DESTROY
+@users_blueprint.route("/users/<id>/delete", methods=["POST"])
+def delete_user(id):
+    user_repository.delete(id)
+    return redirect("/users")

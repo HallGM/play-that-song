@@ -10,6 +10,8 @@
 {% endfor %}
 </ul>
 <a href="/users/{{user.id}}/edit">edit</a>
-<button type="submit" formaction="/users/{{user.id}}/delete">delete</button>
+<form method="POST">
+    <button type="submit" formaction="/users/{{user.id}}/delete">delete</button>
+</form>
 <a href="/user-interface/{{user.id}}">use app as this user</a>
 {% endblock %}
