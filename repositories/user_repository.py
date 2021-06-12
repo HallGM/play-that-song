@@ -24,3 +24,8 @@ def select(id):
         user = User(result['username'], result['bio'], [], result['id'])
         return user
     return None
+
+def update(user):
+    sql = "UPDATE users SET username = %s, bio = %s WHERE id = %s"
+    values = [user.username, user.bio, user.id]
+    run_sql(sql, values)

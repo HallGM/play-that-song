@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="/users"><-- back</a>
+<h3>User</h3>
+<form action="/users/{{user.id}}" method="post">
+  <label for="username" >Username</label>
+  <input type="text" id="username" name="username" value={{user.username}}>
+  <label for="bio">Bio</label>
+  <textarea name="bio" id="bio" cols="30" rows="10">{{user.bio}}</textarea>
+  <button type="submit">Save</button>
+</form> 
+{% endblock content %}
