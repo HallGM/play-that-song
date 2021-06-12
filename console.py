@@ -13,6 +13,9 @@ artist_repository.save(bon_jovi)
 lady_gaga = Artist("Lady Gaga")
 artist_repository.save(lady_gaga)
 
+the_beatles = Artist("The Beatles")
+artist_repository.save(the_beatles)
+
 song = Song("Livin' on  Prayer", bon_jovi, datetime(2020, 12, 25))
 song_repository.save(song)
 
