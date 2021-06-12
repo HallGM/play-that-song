@@ -2,16 +2,19 @@
 {% block content %}
 <h2>Songs</h2>
 {% for song in songs %}
-  <form action="/songs" method="post">
   {% if edit == song.id %}
-    <input type="text" id="title" name="title" />
-    by
-    <select name="artist_id" id="artist">
-    {% for artist in artists %}
-      <option value="{{ artist.d }}">{{ artist.name }}</option>
-    {% endfor %}
-    </select>
+    <form action="/songs/{{edit}}" method="post">
+      <input type="text" id="title" name="title" />
+      by
+      <select name="artist_id" id="artist">
+      {% for artist in artists %}
+        <option value="{{ artist.id }}">{{ artist.name }}</option>
+      {% endfor %}
+      </select>
+      <button type="submit">Save</button>
+    </form>
   {% else %} 
+  <form action="/songs" method="post">
     {{song.display_info()}}
     <a type="submit" href="/songs/{{song.id}}/edit">edit</a>
     <button type="submit" formaction="/songs/{{song.id}}/delete">delete</button>

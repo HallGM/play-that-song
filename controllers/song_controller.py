@@ -17,3 +17,13 @@ def songs_edit(id):
     artists = artist_repository.select_all()
     edit = int(id)
     return render_template("songs/index.html", songs=songs, artists=artists, edit=edit)
+
+@songs_blueprint.route("/songs/<id>", methods=["POST"])
+def songs_update(id):
+    form = request.form
+    song = song_repository.select(id)
+    song.title = form['title']
+    artist = artist_repository.select(form['artist_id'])
+    song.artist = artist
+    song_repository.update(song)
+    return redirect("/songs")

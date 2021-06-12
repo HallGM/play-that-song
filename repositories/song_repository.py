@@ -20,3 +20,18 @@ def select_all():
         time = row['last_played']
         songs.append(Song(row['title'], artist, time, row['id']))
     return songs
+
+def select(id):
+    sql = "SELECT * FROM songs WHERE id = %s"
+    results = run_sql(sql, [id])
+    if len(results) > 0:
+        result = results[0]
+        artist = artist_repository.select(result['id'])
+        song = Song(result['title'], artist, result['last_played'], result['id'])
+        return song
+    return None
+
+def update(song):
+    sql = "UPDATE songs SET title = %s, artist_id = %s, last_played = %s WHERE id = %s"
+    values = [song.title, song.artist.id, song.last_played, song.id]
+    run_sql(sql, values)
