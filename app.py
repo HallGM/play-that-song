@@ -1,11 +1,13 @@
 from flask import Flask, render_template
 
 from controllers.song_controller import songs_blueprint
+from controllers.user_controller import users_blueprint
 
 
 app = Flask(__name__)
 
 app.register_blueprint(songs_blueprint)
+app.register_blueprint(users_blueprint)
 
 @app.route('/')
 def home():

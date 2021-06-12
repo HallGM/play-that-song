@@ -22,7 +22,7 @@
   {# SHOW #}
   <form action="/songs" method="post">
     {{song.display_info()}}
-    <a type="submit" href="/songs/{{song.id}}/edit">edit</a>
+    <a href="/songs/{{song.id}}/edit">edit</a>
     <button type="submit" formaction="/songs/{{song.id}}/delete">delete</button>
   {% endif %}
   </form>

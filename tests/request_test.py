@@ -21,7 +21,7 @@ class TestRequest(unittest.TestCase):
         self.assertEqual("Song 2", self.request.song.title)
 
     def test_request_has_user(self):
-        self.assertEqual("bob", self.request.user.name)
+        self.assertEqual("bob", self.request.user.username)
 
     def test_request_has_time(self):
         self.assertEqual(self.time, self.request.time)

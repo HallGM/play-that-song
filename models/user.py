@@ -1,6 +1,9 @@
 class User:
-    def __init__(self, name, bio, requests, id = None):
-        self.name = name
+    def __init__(self, username, bio, requests = None, id = None):
+        self.username = username
         self.bio = bio
-        self.requests = requests
+        if requests == None:
+            self.requests = []
+        else:
+            self.requests = requests
         self.id = id

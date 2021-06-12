@@ -1,0 +1,14 @@
+{% extends 'base.html' %} 
+{% block content %}
+<h2>{{user.username}}</h2>
+<p>{{user.bio}}</p>
+<h3>Requests:</h3>
+<ul>
+{% for request in user.requests %}
+    <li>{{request.song.title}} by {{request.song.artist.name}}</li>
+{% endfor %}
+</ul>
+<a href="/users/{{user.id}}/edit">edit</a>
+<button type="submit" formaction="/users/{{user.id}}/delete">delete</button>
+<a href="/user-interface/{{user.id}}">use app as this user</a>
+{% endblock %}
