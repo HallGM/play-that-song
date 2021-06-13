@@ -9,4 +9,7 @@ class Song:
         return f"{self.title} by {self.artist.name}"
 
     def display_last_played(self):
-        return self.last_played.strftime("%I:%M %p %Zon %A, %d %B")
+        if self.last_played is not None:
+            return self.last_played.strftime("%I:%M %p %Zon %A, %d %B")
+        else:
+            return "Never"

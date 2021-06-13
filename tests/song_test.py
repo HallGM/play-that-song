@@ -8,6 +8,7 @@ class TestSong(unittest.TestCase):
     def setUp(self):
         blur = Artist("Blur")
         self.song = Song("Song 2", blur, datetime(2020, 12, 25), 5)
+        self.song2 = Song("Song 3", blur)
 
     def test_song_has_id(self):
         self.assertEqual(5, self.song.id)
@@ -28,4 +29,7 @@ class TestSong(unittest.TestCase):
 
     def test_display_last_played(self):
         self.assertEqual(self.song.display_last_played(), "12:00 AM on Friday, 25 December")
+    
+    def test_display_lasst_played_never(self):
+        self.assertEqual(self.song2.display_last_played(), "Never")
 
