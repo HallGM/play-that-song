@@ -26,7 +26,7 @@ CREATE TABLE users (
 CREATE TABLE requests (
     id SERIAL PRIMARY KEY,
     song_id INT REFERENCES songs(id),
-    user_id INT REFERENCES artists(id),
+    user_id INT REFERENCES users(id),
     time TIMESTAMP,
     played BOOLEAN
 )

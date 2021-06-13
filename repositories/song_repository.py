@@ -17,9 +17,6 @@ def select_all():
     songs = []
     for row in results:
         artist = artist_repository.select(row['artist_id'])
-        print(".....")
-        print(artist)
-        print(".....")
         time = row['last_played']
         songs.append(Song(row['title'], artist, time, row['id']))
     songs.sort(key=lambda song: song.artist.name)
@@ -31,7 +28,7 @@ def select(id):
 
     if len(results) > 0:
         result = results[0]
-        artist = artist_repository.select(result['id'])
+        artist = artist_repository.select(result['artist_id'])
         song = Song(result['title'], artist, result['last_played'], result['id'])
         return song
     return None

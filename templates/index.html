@@ -1,5 +1,16 @@
-<!-- prettier-ignore -->
-{% extends 'base.html' %}
-{% block content %}
-hello world
+{% extends 'base.html' %} {% block content %}
+<h2>Requests</h2>
+<ul>
+  {% for song_request in requests %}
+  <li>
+    <div>
+      {{song_request.song.display_info()}} made by
+      {{song_request.user.username}} at {{song_request.display_time()}}
+      <form action="/request/play" method="post">
+        <button type="submit">mark as played</button>
+      </form>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
 {% endblock %}

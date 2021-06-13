@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, Blueprint
+from flask import render_template, request, redirect, Blueprint
 from models.user import User
 import repositories.user_repository as user_repository
 import repositories.artist_repository as artist_repository

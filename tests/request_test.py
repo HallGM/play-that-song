@@ -11,7 +11,7 @@ class TestRequest(unittest.TestCase):
         blur = Artist("Blur")
         song = Song("Song 2", blur, datetime(2020, 12, 25))
         user = User("bob", "hello my name is bob", [])
-        self.time = datetime.today()
+        self.time = datetime(2020, 12, 25)
         self.request = Request(song, user, self.time, 5)
 
     def test_request_has_id(self):
@@ -32,3 +32,6 @@ class TestRequest(unittest.TestCase):
     def test_mark_as_played(self):
         self.request.mark_as_played()
         self.assertEqual(True, self.request.played)
+    
+    def test_display_time(self):
+        self.assertEqual(self.request.display_time(), "12:00 AM on Friday, 25 December")

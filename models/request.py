@@ -8,3 +8,6 @@ class Request:
 
     def mark_as_played(self):
         self.played = True
+
+    def display_time(self):
+        return self.time.strftime("%I:%M %p %Zon %A, %d %B")
