@@ -1,5 +1,6 @@
 from models.user import User
 from db.run_sql import run_sql
+import repositories.request_repository as request_repository
 
 def save(user):
     sql = "INSERT INTO users( username, bio ) VALUES ( %s, %s ) RETURNING id"
@@ -13,7 +14,10 @@ def delete_all():
 
 def select_all():
     results = run_sql("SELECT * FROM users")
-    users = [User(row['username'], row['bio'], [], row['id']) for row in results]
+    users = []
+    for row in results:
+        user =User(row['username'], row['bio'], row['id'])
+        users.append(user)
     return users
 
 def select(id):
@@ -21,7 +25,7 @@ def select(id):
     results = run_sql(sql, [id])
     if len(results) > 0:
         result = results[0]
-        user = User(result['username'], result['bio'], [], result['id'])
+        user = User(result['username'], result['bio'], result['id'])
         return user
     return None
 

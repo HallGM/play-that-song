@@ -1,3 +1,4 @@
+from controllers.user_controller import users
 from models.request import Request
 from models.song import Song
 from models.artist import Artist
@@ -36,12 +37,17 @@ user2 = User("Bob", "I like music",)
 user_repository.save(user2)
 
 request1 = Request(song, user1, datetime.today())
+request2 = Request(song2, user1, datetime.today())
 
 request_repository.save(request1)
+request_repository.save(request2)
 
-print(request1.display_time())
+# print(request_repository.select_by_user(user1.id))
+
+# print(request1.display_time())
 
 # print(artist_repository.select_all())
 # print([vars(item) for item in song_repository.select_all()])
-# print([vars(item) for item in user_repository.select_all()])
+users = user_repository.select_all()
+# print([vars(item) for item in users])
 # print([vars(item) for item in request_repository.select_all()])

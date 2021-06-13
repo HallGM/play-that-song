@@ -38,3 +38,14 @@ def update(request):
     sql = "UPDATE requests SET song_id = %s, user_id = %s, time = %s, played = %s WHERE id = %s"
     values = [request.song.id, request.user.id, request.time, request.played, request.id]
     run_sql(sql, values)
+
+def select_by_user(user_id):
+    sql = "SELECT * from requests WHERE user_id = %s"
+    results = run_sql(sql, [user_id])
+    requests = []
+    for result in results:
+        song = song_repository.select(result['song_id'])
+        user = user_repository.select(result['user_id'])
+        request = Request(song, user, result['time'], result['id'], result['played'])
+        requests.append(request)
+    return requests

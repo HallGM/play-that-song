@@ -5,7 +5,7 @@
 <p>{{user.bio}}</p>
 <h3>Requests:</h3>
 <ul>
-{% for request in user.requests %}
+{% for request in requests %}
     <li>{{request.song.title}} by {{request.song.artist.name}}</li>
 {% endfor %}
 </ul>
