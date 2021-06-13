@@ -19,7 +19,7 @@ def select_all():
     for row in results:
         song = song_repository.select(row['song_id'])
         user = user_repository.select(row['user_id'])
-        request = Request(song, user, row['time'], row['played'])
+        request = Request(song, user, row['time'], row["id"], row['played'],)
         requests.append(request)
     return requests
 
@@ -30,6 +30,11 @@ def select(id):
         result = results[0]
         song = song_repository.select(result['song_id'])
         user = user_repository.select(result['user_id'])
-        request = Request(song, user, result['time'], result['played'])
+        request = Request(song, user, result['time'], result['id'], result['played'])
         return request
     return None
+
+def update(request):
+    sql = "UPDATE requests SET song_id = %s, user_id = %s, time = %s, played = %s WHERE id = %s"
+    values = [request.song.id, request.user.id, request.time, request.played, request.id]
+    run_sql(sql, values)

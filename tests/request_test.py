@@ -35,3 +35,8 @@ class TestRequest(unittest.TestCase):
     
     def test_display_time(self):
         self.assertEqual(self.request.display_time(), "12:00 AM on Friday, 25 December")
+
+    def test_mark_as_unplayed(self):
+        self.request.mark_as_played()
+        self.request.mark_as_unplayed()
+        self.assertEqual(False, self.request.played)
