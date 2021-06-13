@@ -1,8 +1,9 @@
-from datetime import datetime
+from datetime import datetime, time
 from flask import render_template, request, redirect, Blueprint
 from models.request import Request
 import repositories.request_repository as request_repository
 import repositories.song_repository as song_repository
+import repositories.user_repository as user_repository
 
 requests_blueprint = Blueprint("requests", __name__)
 
@@ -15,8 +16,19 @@ def requests():
 # NEW
 @requests_blueprint.route("/requests/new")
 def new_request():
-    return ""
+    songs = song_repository.select_all()
+    users = user_repository.select_all()
+    return render_template("requests/new.html",  songs=songs, users=users)
 
+# UPDATE
+@requests_blueprint.route("/requests", methods=["POST"])
+def update_request():
+    form = request.form 
+    song = song_repository.select(form['song_id'])
+    user = user_repository.select(form['user_id'])
+    new_request = Request(song, user, datetime.now())
+    request_repository.save(new_request)
+    return redirect("/requests")
 
 
 # MARK AS PLAYED
