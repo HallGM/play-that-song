@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'main_nav.html' %} {% block nav_content %}
 <h2>Requests</h2>
 <h3>All Requests</h3>
 <ul>
@@ -14,6 +14,7 @@
   </li>
   {% endif %} {% endfor %}
 </ul>
+<a href="/requests/new">+ New Request</a>
 <h3>Played</h3>
 <ul>
 {% for song_request in requests %} {% if song_request.played %}

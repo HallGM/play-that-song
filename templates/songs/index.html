@@ -1,5 +1,5 @@
-{% extends 'base.html' %} 
-{% block content %}
+{% extends 'main_nav.html' %} 
+{% block nav_content %}
 <h2>Songs</h2>
 {% for song in songs %}
   {% if edit == song.id %}
@@ -21,7 +21,8 @@
   {% else %} 
   {# SHOW #}
   <form action="/songs" method="post">
-    {{song.display_info()}}
+    <div>{{song.display_info()}}</div>
+    <div>last played {{song.display_last_played()}}</div>
     <a href="/songs/{{song.id}}/edit">edit</a>
     <button type="submit" formaction="/songs/{{song.id}}/delete">delete</button>
   {% endif %}

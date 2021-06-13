@@ -26,3 +26,6 @@ class TestSong(unittest.TestCase):
     def test_display_info(self):
         self.assertEqual(self.song.display_info(), "Song 2 by Blur")
 
+    def test_display_last_played(self):
+        self.assertEqual(self.song.display_last_played(), "12:00 AM on Friday, 25 December")
+

@@ -7,3 +7,6 @@ class Song:
 
     def display_info(self):
         return f"{self.title} by {self.artist.name}"
+
+    def display_last_played(self):
+        return self.last_played.strftime("%I:%M %p %Zon %A, %d %B")
