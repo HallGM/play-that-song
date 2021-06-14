@@ -41,3 +41,17 @@ def update(song):
 def delete(id):
     sql = "DELETE FROM songs where id = %s"
     run_sql(sql, [id])
+
+def search(query):
+    query = f"%{query}%"
+    sql="SELECT songs.id as song_id, artists.id as artist_id, songs.last_played, songs.title, artists.name FROM songs INNER JOIN artists ON songs.artist_id = artists.id WHERE LOWER(artists.name) LIKE LOWER(%s) OR LOWER(songs.title) LIKE LOWER(%s)"
+    values = [query, query]
+    results = run_sql(sql, values)
+    print(results)
+    songs = []
+    for row in results:
+        artist = artist_repository.select(row['artist_id'])
+        time = row['last_played']
+        songs.append(Song(row['title'], artist, time, row['song_id']))
+    songs.sort(key=lambda song: song.artist.name)
+    return songs

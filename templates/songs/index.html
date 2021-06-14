@@ -1,6 +1,16 @@
 {% extends 'main_nav.html' %} 
 {% block nav_content %}
 <h2>Songs</h2>
+<!-- SEARCH -->
+<form action="/songs/search" method="post">
+  <label for="search">Search:</label>
+  <input type="text" id="search" name="search">
+  <button type="submit">Search</button>
+  {% if show_clear %}
+    <a href="/songs">Clear Search</a>
+  {% endif %}
+</form>
+
 {% for song in songs %}
   {% if edit == song.id %}
   {# EDIT #}
@@ -28,6 +38,9 @@
   </form>
   {% endif %} 
 {% endfor %} 
+{% if no_songs %}
+  <p>none...</p>
+{% endif %}
 {# New Song #}
   <h3>+ New Song:</h3>
   <form action="/songs" method="post">

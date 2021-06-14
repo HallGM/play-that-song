@@ -63,7 +63,14 @@ def ui_update_profile(id):
     return redirect(f"/user-interface/{id}/profile")
 
 # CONGRATS
-
 @ui_home_blueprint.route("/user-interface/<id>/congrats")
 def ui_congrats(id):
     return render_template("user_interface/congrats.html", id=id, back_button=None)
+
+# SEARCH
+@ui_home_blueprint.route("/user-interface/<id>/songs/search", methods=["POST"])
+def ui_search_songs(id):
+    form = request.form
+    songs = song_repository.search(form['search'])
+    no_songs = len(songs) == 0
+    return render_template('/user_interface/songs.html', id=id, songs=songs, back_button=f"/user-interface/{id}", no_songs=no_songs, show_clear=True)

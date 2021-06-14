@@ -49,3 +49,4 @@ def update_user(id):
 def delete_user(id):
     user_repository.delete(id)
     return redirect("/users")
+    

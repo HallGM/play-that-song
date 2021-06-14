@@ -18,7 +18,8 @@ def songs_edit(id):
     songs = song_repository.select_all()
     artists = artist_repository.select_all()
     edit = int(id)
-    return render_template("songs/index.html", songs=songs, artists=artists, edit=edit)
+    no_songs = len(songs) == 0
+    return render_template("songs/index.html", songs=songs, artists=artists, edit=edit, son_songs=no_songs)
 
 # UPDATE
 @songs_blueprint.route("/songs/<id>", methods=["POST"])
@@ -45,3 +46,12 @@ def new_song():
     new_song = Song(form["title"], artist)
     song_repository.save(new_song)
     return redirect("/songs")
+
+# SEARCH
+@songs_blueprint.route("/songs/search", methods=["POST"])
+def search_songs():
+    form = request.form
+    songs = song_repository.search(form['search'])
+    artists = artist_repository.select_all()
+    no_songs = len(songs) == 0
+    return render_template("songs/index.html", songs=songs, artists=artists, edit=None, show_clear=True, no_songs=no_songs)

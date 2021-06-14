@@ -48,6 +48,8 @@ request_repository.save(request2)
 
 # print(artist_repository.select_all())
 # print([vars(item) for item in song_repository.select_all()])
-users = user_repository.select_all()
+# users = user_repository.select_all()
 # print([vars(item) for item in users])
 # print([vars(item) for item in request_repository.select_all()])
+
+song_repository.search("j")
