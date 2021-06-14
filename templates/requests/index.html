@@ -4,29 +4,25 @@
 <ul>
   {% for song_request in requests %} {% if not song_request.played %}
   <li>
-    <div>
-      {{song_request.song.display_info()}} made by
-      {{song_request.user.username}} at {{song_request.display_time()}}
-      <form action="/requests/{{song_request.id}}/play" method="post">
-        <button type="submit">mark as played</button>
-      </form>
-    </div>
+    {{song_request.song.display_info()}} made by {{song_request.user.username}}
+    at {{song_request.display_time()}}
+    <form action="/requests/{{song_request.id}}/play" method="post">
+      <button type="submit">mark as played</button>
+    </form>
   </li>
   {% endif %} {% endfor %}
 </ul>
 <a href="/requests/new">+ New Request</a>
 <h3>Played</h3>
 <ul>
-{% for song_request in requests %} {% if song_request.played %}
-<li>
-  <div>
+  {% for song_request in requests %} {% if song_request.played %}
+  <li>
     {{song_request.song.display_info()}} made by {{song_request.user.username}}
     at {{song_request.display_time()}}
     <form action="/requests/{{song_request.id}}/unplay" method="post">
       <button type="submit">mark as unplayed</button>
     </form>
-  </div>
-</li>
+  </li>
 </ul>
 
 {% endif %} {% endfor %} {% endblock %}

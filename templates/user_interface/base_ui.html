@@ -4,7 +4,10 @@
     <a href="{{back_button}}"><--back</a>
   {% endif %}
   <h1>PLAY THAT SONG!</h1>
+  {% if not hide_profile  %}
   <a href="/user-interface/{{id}}/profile">my_profile</a> 
+  {% endif %}
+  
 
   {% block content %}{% endblock content %}
 

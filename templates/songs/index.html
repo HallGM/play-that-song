@@ -25,8 +25,8 @@
     <div>last played {{song.display_last_played()}}</div>
     <a href="/songs/{{song.id}}/edit">edit</a>
     <button type="submit" formaction="/songs/{{song.id}}/delete">delete</button>
-  {% endif %}
   </form>
+  {% endif %} 
 {% endfor %} 
 {# New Song #}
   <h3>+ New Song:</h3>

@@ -1,0 +1,15 @@
+{% extends 'user_interface/base_ui.html' %}
+{% block content %}
+  <h2>Songs</h2>
+  <ul>
+  {% for song in songs %}
+  <li>
+    <form action="/user-interface/{{id}}/request/{{song.id}}" method="post">
+      <div>{{song.display_info()}}</div>
+      <button type="submit" >Request this song</button>
+    </form>  
+  </li>
+    
+  {% endfor %}
+</ul>
+{% endblock content %}

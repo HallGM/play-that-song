@@ -1,0 +1,12 @@
+{% extends 'user_interface/base_ui.html' %}
+{% block content %}
+<h2>{{user.username}}</h2>
+<p>{{user.bio}}</p>
+<h3>Requests:</h3>
+<ul>
+{% for request in requests %}
+    <li>{{request.song.title}} by {{request.song.artist.name}}</li>
+{% endfor %}
+</ul>
+<a href="/user-interface/{{user.id}}/profile/edit">edit</a>
+{% endblock content %}

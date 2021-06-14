@@ -1,0 +1,26 @@
+{% extends 'user_interface/base_ui.html' %}
+{% block content %}
+<ul>
+{% for song_request in requests %}
+  {% if not song_request.played %}
+    <li>
+      {{song_request.song.display_info()}} made by
+      {{song_request.user.username}} at {{song_request.display_time()}}
+    </li>
+  {% endif %} 
+{% endfor %}
+</ul>
+<a href="/user-interface/{{id}}/songs">Make new request</a>
+<h3>Played</h3>
+<ul>
+{% for song_request in requests %} 
+  {% if song_request.played %}
+  <li>
+      {{song_request.song.display_info()}} made by {{song_request.user.username}}
+      at {{song_request.display_time()}}
+  </li>
+  </ul>
+  {% endif %} 
+{% endfor %}
+
+{% endblock content %}
