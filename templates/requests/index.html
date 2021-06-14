@@ -4,7 +4,7 @@
 <ul>
   {% for song_request in requests %} {% if not song_request.played %}
   <li>
-    {{song_request.song.display_info()}} made by {{song_request.user.username}}
+    {{song_request.song.display_info()}} made by <a href="/users/{{song_request.user.id}}">{{song_request.user.username}}</a>
     at {{song_request.display_time()}}
     <form action="/requests/{{song_request.id}}/play" method="post">
       <button type="submit">mark as played</button>
