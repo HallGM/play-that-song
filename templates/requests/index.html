@@ -8,15 +8,16 @@
       <ul>
         {% for song_request in requests %} {% if not song_request.played %}
         <li>
-          <div>{{song_request.song.display_info()}}</div>
+          <div class="song-info">{{song_request.song.display_info()}}</div>
           <div>
             <a href="/users/{{song_request.user.id}}"
-              >{{song_request.user.username}}</a
+              ><span>{{song_request.user.username}}</span></a
             >
             <div>{{song_request.display_time()}}</div>
           </div>
           <form action="/requests/{{song_request.id}}/play" method="post">
-            <button type="submit">mark as played</button>
+            <div><label for="played">Played?</label></div>
+            <div><button type="submit" id="played"><i class="fas fa-check"></i></button></div>
           </form>
         </li>
         {% endif %} {% endfor %}
@@ -30,7 +31,7 @@
       <ul>
         {% for song_request in requests %} {% if song_request.played %}
         <li>
-          <div>{{song_request.song.display_info()}}</div>
+          <div class="song-info">{{song_request.song.display_info()}}</div>
           <div>
             <a href="/users/{{song_request.user.id}}"
               >{{song_request.user.username}}</a

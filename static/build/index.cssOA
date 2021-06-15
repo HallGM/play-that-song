@@ -55,12 +55,12 @@ h3 {
   text-align: left;
 }
 
-.main-page-box, .users, .request-box {
+.request-box {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.main-page-box div, .users div, .request-box div {
+.request-box div {
   flex-grow: 1;
   margin-right: 10px;
 }
@@ -71,7 +71,7 @@ h3 {
 }
 .song-requests ul li {
   display: block;
-  background-color: #bcddff;
+  background-color: white;
   padding: 5px 10px 5px 10px;
   margin-bottom: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -88,7 +88,7 @@ h3 {
   background-color: #c2c4c7;
 }
 
-button, .a-btn,
+button,
 input,
 optgroup,
 select,
@@ -99,16 +99,16 @@ textarea {
   margin: 0;
 }
 
-button, .a-btn,
+button,
 [type=submit] {
   -webkit-appearance: button;
   background-color: #023e7d;
   color: white;
   border: none;
-  padding: 5px 10px 5px 10px;
+  padding: 5px 0 5px 0;
 }
 
-button:hover, .a-btn:hover,
+button:hover,
 [type=submit]:hover {
   cursor: pointer;
 }
@@ -117,16 +117,11 @@ button:hover, .a-btn:hover,
   background-color: red;
 }
 
-.btn-edit {
-  background-color: #5c677d;
+.user-list {
+  max-width: 900px;
+  margin: auto;
 }
-
-.a-btn {
-  text-decoration: inherit;
-  -webkit-appearance: button;
-}
-
-.users ul li {
+.user-list ul li {
   display: block;
   background-color: #bcddff;
   padding: 5px 10px 5px 10px;
@@ -138,12 +133,4 @@ button:hover, .a-btn:hover,
   align-items: center;
 }
 
-form.form {
-  display: flex;
-  flex-direction: column;
-}
-form.form input, form.form textarea {
-  margin-bottom: 10px;
-}
-
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index.cssOA.map */

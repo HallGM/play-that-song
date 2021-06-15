@@ -1,0 +1,9 @@
+.users{
+    @extend .main-page-box;
+    ul{
+        li{
+            @include boxify($main-color-light);
+            @include box-flex;
+        }
+    }
+}

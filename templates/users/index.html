@@ -1,22 +1,36 @@
-{% extends 'main_nav.html' %} 
-{% block nav_content %}
+{% extends 'main_nav.html' %} {% block nav_content %}
 <h2>Users</h2>
-<ul>
-  {% for user in users %}
-    <li><a href="/users/{{user.id}}">{{user.username}}</a></li>
-    <form method="post"> 
-      <a href="/users/{{user.id}}/edit">edit</a>
-      <button type="submit" formaction="/users/{{user.id}}/delete">delete</button>
+<div class="users">
+  <div>
+    <ul>
+      {% for user in users %}
+      <li>
+        <a href="/users/{{user.id}}">{{user.username}}</a>
+        <form method="post">
+          <a href="/users/{{user.id}}/edit" class="a-btn btn-edit">edit</a>
+          <button
+            type="submit"
+            formaction="/users/{{user.id}}/delete"
+            class="btn-danger"
+          >
+            <i class="fas fa-trash"></i> Delete
+          </button>
+        </form>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  {# New User #}
+  <div>
+    <h3>Add new User</h3>
+    <form action="/users" method="post" class="form">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" />
+      <label for="bio">Bio:</label>
+      <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+      <button type="submit">Add</button>
     </form>
-  {% endfor %}
-</ul>
-{# New User #}
-<h3>Add new User</h3>
-<form action="/users" method="post">
-  <label for="username">Username</label>
-  <input type="text" id="username" name="username">
-  <label for="bio">Bio:</label>
-  <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
-  <button type="submit">Add</button>
-</form>
+  </div>
+</div>
 {% endblock %}

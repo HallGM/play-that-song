@@ -1,36 +1,25 @@
 .request-box {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    div {
-        // width: 500px;
-        flex-grow: 1;
-        margin-right: 10px;
-    }
-  }
+  @extend .main-page-box;
+}
 
 .song-requests {
-    ul {
-      display: flex;
-      flex-direction: column;
-    //   flex-wrap: nowrap;
-      li {
-        @include boxify ($main-color-light);
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        // flex-wrap: nowrap;
-        
+  ul {
+    display: flex;
+    flex-direction: column;
+    li {
+      @include boxify($main-color-light);
+      @include box-flex();
+      div.song-info {
+        font-weight: bold;
       }
     }
   }
-  
-  .song-requests-played {
-    ul {
-      li {
-        background-color: $second-color-light;
-      }
+}
+
+.song-requests-played {
+  ul {
+    li {
+      background-color: $second-color-light;
     }
   }
-  
-  
+}

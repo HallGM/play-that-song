@@ -1,0 +1,44 @@
+// normalize
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button,
+[type="submit"] {
+  -webkit-appearance: button;
+  background-color: $main-color;
+  color: white;
+  border: none;
+  padding:5px 10px 5px 10px;
+}
+
+button:hover,
+[type="submit"]:hover {
+  cursor: pointer;
+}
+
+.btn-danger {
+  background-color: red;
+}
+
+.btn-edit {
+  background-color: $second-color;
+}
+
+.a-btn {
+  @extend button;
+  text-decoration: inherit;
+  -webkit-appearance: button;
+  // display: block;
+  // // background-color: $main-color;
+  // color: white;
+  // border: none;
+  // padding: 20px;
+}
