@@ -1,0 +1,16 @@
+.song-main {
+  @extend .main-page-box;
+  ul {
+    display: flex;
+    flex-direction: column;
+    li {
+      form {
+        @include boxify($main-color-light);
+        @include box-flex();
+        div{
+          
+        }
+      }
+    }
+  }
+}

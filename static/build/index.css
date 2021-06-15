@@ -55,14 +55,14 @@ h3 {
   text-align: left;
 }
 
-.main-page-box, .users, .request-box {
+.main-page-box, .song-main, .users, .request-box {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.main-page-box div, .users div, .request-box div {
+.main-page-box div, .song-main div, .users div, .request-box div {
   flex-grow: 1;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .song-requests ul {
@@ -121,9 +121,14 @@ button:hover, .a-btn:hover,
   background-color: #5c677d;
 }
 
+.btn-green {
+  background-color: green;
+}
+
 .a-btn {
   text-decoration: inherit;
   -webkit-appearance: button;
+  margin-right: 5px;
 }
 
 .users ul li {
@@ -142,8 +147,28 @@ form.form {
   display: flex;
   flex-direction: column;
 }
-form.form input, form.form textarea {
+form.form input, form.form textarea, form.form select {
   margin-bottom: 10px;
+}
+
+form.search {
+  margin-bottom: 10px;
+}
+
+.song-main ul {
+  display: flex;
+  flex-direction: column;
+}
+.song-main ul li form {
+  display: block;
+  background-color: #bcddff;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /*# sourceMappingURL=index.css.map */

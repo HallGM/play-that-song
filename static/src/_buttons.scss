@@ -32,13 +32,13 @@ button:hover,
   background-color: $second-color;
 }
 
+.btn-green {
+  background-color: green;  
+}
+
 .a-btn {
   @extend button;
   text-decoration: inherit;
   -webkit-appearance: button;
-  // display: block;
-  // // background-color: $main-color;
-  // color: white;
-  // border: none;
-  // padding: 20px;
+  margin-right: 5px;
 }

@@ -94,7 +94,7 @@ h3 {
   flex-wrap: wrap;
   div {
     flex-grow: 1;
-    margin-right: 10px;
+    margin-right: 20px;
   }
 }
 
@@ -102,3 +102,4 @@ h3 {
 @import "buttons";
 @import "users";
 @import "forms";
+@import "songs";

@@ -1,7 +1,11 @@
 form.form{
     display: flex;
     flex-direction: column;
-    input, textarea{
+    input, textarea, select {
         margin-bottom: 10px;
     }
+}
+
+form.search{
+    margin-bottom: 10px;
 }

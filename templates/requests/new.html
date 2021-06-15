@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
-<a href="/requests"><-- back</a>
-<form action="/requests" method="post">
+<a href="/requests"class="a-btn"><i class="fas fa-long-arrow-alt-left"></i> Back</a>
+<form action="/requests" method="post" class="form">
   <label for="song">Song</label>
   <select name="song_id" id="song">
     {% for song in songs %}
