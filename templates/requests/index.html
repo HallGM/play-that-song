@@ -1,28 +1,48 @@
 {% extends 'main_nav.html' %} {% block nav_content %}
 <h2>Requests</h2>
-<h3>All Requests</h3>
-<ul>
-  {% for song_request in requests %} {% if not song_request.played %}
-  <li>
-    {{song_request.song.display_info()}} made by <a href="/users/{{song_request.user.id}}">{{song_request.user.username}}</a>
-    at {{song_request.display_time()}}
-    <form action="/requests/{{song_request.id}}/play" method="post">
-      <button type="submit">mark as played</button>
-    </form>
-  </li>
-  {% endif %} {% endfor %}
-</ul>
-<a href="/requests/new">+ New Request</a>
-<h3>Played</h3>
-<ul>
-  {% for song_request in requests %} {% if song_request.played %}
-  <li>
-    {{song_request.song.display_info()}} made by {{song_request.user.username}}
-    at {{song_request.display_time()}}
-    <form action="/requests/{{song_request.id}}/unplay" method="post">
-      <button type="submit">mark as unplayed</button>
-    </form>
-  </li>
-</ul>
-
+<hr />
+<div class="request-box">
+  <div>
+    <h3>All Requests</h3>
+    <div class="song-requests">
+      <ul>
+        {% for song_request in requests %} {% if not song_request.played %}
+        <li>
+          <div>{{song_request.song.display_info()}}</div>
+          <div>
+            <a href="/users/{{song_request.user.id}}"
+              >{{song_request.user.username}}</a
+            >
+            <div>{{song_request.display_time()}}</div>
+          </div>
+          <form action="/requests/{{song_request.id}}/play" method="post">
+            <button type="submit">mark as played</button>
+          </form>
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+    </div>
+    <a href="/requests/new">+ New Request</a>
+  </div>
+  <div>
+    <h3>Played</h3>
+    <div class="song-requests song-requests-played">
+      <ul>
+        {% for song_request in requests %} {% if song_request.played %}
+        <li>
+          <div>{{song_request.song.display_info()}}</div>
+          <div>
+            <a href="/users/{{song_request.user.id}}"
+              >{{song_request.user.username}}</a
+            >
+            <div>{{song_request.display_time()}}</div>
+          </div>
+          <form action="/requests/{{song_request.id}}/unplay" method="post">
+            <button type="submit">mark as unplayed</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 {% endif %} {% endfor %} {% endblock %}

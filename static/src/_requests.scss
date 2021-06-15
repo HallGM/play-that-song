@@ -1,0 +1,36 @@
+.request-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    div {
+        // width: 500px;
+        flex-grow: 1;
+        margin-right: 10px;
+    }
+  }
+
+.song-requests {
+    ul {
+      display: flex;
+      flex-direction: column;
+    //   flex-wrap: nowrap;
+      li {
+        @include boxify ($main-color-light);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        // flex-wrap: nowrap;
+        
+      }
+    }
+  }
+  
+  .song-requests-played {
+    ul {
+      li {
+        background-color: $second-color-light;
+      }
+    }
+  }
+  
+  

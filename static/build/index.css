@@ -1,0 +1,86 @@
+body {
+  font-family: "Mukta", sans-serif;
+}
+body .container {
+  padding: 0px 10px 0px 10px;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.top-bar {
+  background-color: #023e7d;
+}
+.top-bar h1 {
+  color: white;
+  font-family: "Indie Flower", cursive;
+  display: block;
+  padding: 10px;
+  text-align: center;
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+}
+.main-nav ul li a {
+  color: white;
+  font-weight: bolder;
+  text-decoration: none;
+  background-color: #5C677D;
+  width: 100px;
+  padding: 5px 10px 5px 10px;
+  margin: 0 5px 0 0;
+}
+.main-nav ul li a:hover {
+  background-color: #7D8597;
+  text-decoration: none;
+  cursor: pointer;
+}
+.main-nav ul li a.selected {
+  background-color: #023e7d;
+}
+
+h2, h3 {
+  text-align: center;
+  font-weight: bold;
+  color: #023e7d;
+}
+
+h3 {
+  text-align: left;
+}
+
+.request-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.request-box div {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.song-requests ul {
+  display: flex;
+  flex-direction: column;
+}
+.song-requests ul li {
+  display: block;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.song-requests-played ul li {
+  background-color: #c2c4c7;
+}
+
+/*# sourceMappingURL=index.css.map */

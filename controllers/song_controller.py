@@ -10,7 +10,7 @@ songs_blueprint = Blueprint("songs", __name__)
 def songs():
     songs = song_repository.select_all()
     artists = artist_repository.select_all()
-    return render_template("songs/index.html", songs=songs, artists=artists, edit=None)
+    return render_template("songs/index.html", songs=songs, artists=artists, edit=None, selected="songs")
 
 # EDIT
 @songs_blueprint.route("/songs/<id>/edit")

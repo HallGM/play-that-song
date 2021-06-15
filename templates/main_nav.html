@@ -1,14 +1,26 @@
 {% extends 'base.html' %} {% block nav %}
-<nav>
+<nav class="main-nav">
   <ul>
     <li>
+      {% if selected == "requests" %}
+      <a href="/requests" class="selected">Requests</a>
+      {% else %}
       <a href="/requests">Requests</a>
+      {% endif %}
     </li>
     <li>
+      {% if selected == "users" %}
+      <a href="/users" class="selected">Users</a>
+      {% else %}
       <a href="/users">Users</a>
+      {% endif %}
     </li>
     <li>
+      {% if selected == "songs" %}
+      <a href="/songs" class="selected">Songs</a>
+      {% else %}
       <a href="/songs">Songs</a>
+      {% endif %}
     </li>
   </ul>
 </nav>

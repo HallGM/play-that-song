@@ -11,7 +11,7 @@ requests_blueprint = Blueprint("requests", __name__)
 @requests_blueprint.route("/requests")
 def requests():
     requests = request_repository.select_all()
-    return render_template("requests/index.html", requests=requests )
+    return render_template("requests/index.html", requests=requests, selected="requests" )
 
 # NEW
 @requests_blueprint.route("/requests/new")
