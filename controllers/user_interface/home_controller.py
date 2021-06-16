@@ -25,7 +25,7 @@ def update_request(user_id, song_id):
     user = user_repository.select(user_id)
     new_request = Request(song, user, datetime.now())
     request_repository.save(new_request)
-    return redirect(f"/user-interface/{user_id}/my-requests")
+    return redirect(f"/user-interface/{user_id}/congrats")
 
 # REQUESTS
 @ui_home_blueprint.route('/user-interface/<id>/requests')

@@ -6,7 +6,7 @@
     <form action="/songs/search" method="post" class="search">
       <label for="search">Search:</label>
       <input type="text" id="search" name="search" />
-      <button type="submit">Search</button>
+      <button type="submit"><i class="fas fa-search"></i> Search</button>
       {% if show_clear %}
       <a href="/songs">Clear Search</a>
       {% endif %}
@@ -35,7 +35,7 @@
               {% endif %} {% endfor %}
             </select>
           </div>
-          <button type="submit" class='btn-green'>Save</button>
+          <button type="submit" class='btn-green'><i class="fas fa-save"></i> Save</button>
         </form>
         {% else %} {# SHOW #}
         <form action="/songs" method="post">
