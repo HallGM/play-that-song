@@ -1,6 +1,6 @@
 .request-box {
   @extend .main-page-box;
-  div{
+  div {
     flex-grow: 1;
   }
 }
@@ -12,7 +12,7 @@
     li {
       @include boxify($main-color-light);
       @include box-flex();
-      div{
+      div {
         flex-grow: 1;
       }
       div.song-info {
@@ -20,15 +20,15 @@
         width: 180px;
       }
       div.user-info {
-        width:180px;
+        width: 180px;
       }
-      form{
-        margin:0;
+      form {
+        margin: 0;
         padding: 0;
-        button{
-          width:80px;
+        button {
+          width: 80px;
         }
-        width:80px;
+        width: 80px;
       }
     }
   }

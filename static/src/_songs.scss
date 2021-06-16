@@ -7,9 +7,6 @@
       form {
         @include boxify($main-color-light);
         @include box-flex();
-        div{
-          
-        }
       }
     }
   }

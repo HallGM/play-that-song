@@ -1,4 +1,3 @@
-from controllers.user_controller import users
 from models.request import Request
 from models.song import Song
 from models.artist import Artist

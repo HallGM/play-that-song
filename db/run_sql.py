@@ -1,12 +1,13 @@
 import psycopg2
 import psycopg2.extras as ext
 
-def run_sql(sql, values = None):
+
+def run_sql(sql, values=None):
     connection = None
     results = []
 
     try:
-        connection=psycopg2.connect("dbname='song_requestor'")
+        connection = psycopg2.connect("dbname='song_requestor'")
         cursor = connection.cursor(cursor_factory=ext.DictCursor)
         cursor.execute(sql, values)
         connection.commit()
