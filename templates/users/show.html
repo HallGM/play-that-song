@@ -1,17 +1,23 @@
-{% extends 'base.html' %} 
-{% block content %}
-<a href="/users" class="a-btn"><i class="fas fa-long-arrow-alt-left"></i>gi Back</a>
-<h2>{{user.username}}</h2>
+{% extends 'base.html' %} {% block content %}
+<a href="/users" class="a-btn"
+  ><i class="fas fa-long-arrow-alt-left"></i> Back</a
+>
+<h2 class="left-align">{{user.username}}</h2>
+<h3>Bio:</h3>
 <p>{{user.bio}}</p>
 <h3>Requests:</h3>
-<ul>
-{% for request in requests %}
+<div class="song-requests">
+  <ul id="user-requests">
+    {% for request in requests %}
     <li>{{request.song.title}} by {{request.song.artist.name}}</li>
-{% endfor %}
-</ul>
-<a href="/users/{{user.id}}/edit">edit</a>
-<form method="POST">
-    <button type="submit" formaction="/users/{{user.id}}/delete">delete</button>
-</form>
+    {% endfor %}
+  </ul>
+</div>
+<div class="side-by-side">
+  <a href="/users/{{user.id}}/edit" class="a-btn btn-edit"><i class="fas fa-edit"></i> Edit</a>
+  <form method="POST">
+    <button type="submit" formaction="/users/{{user.id}}/delete" class="btn-danger"><i class="fas fa-trash"></i> Delete</button>
+  </form>
+</div>
 <a href="/user-interface/{{user.id}}">use app as this user</a>
 {% endblock %}

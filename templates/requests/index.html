@@ -3,21 +3,28 @@
 <hr />
 <div class="request-box">
   <div>
-    <h3>All Requests</h3>
+    <div id="request-divider">
+      <div><h3>All Requests</h3></div>
+      <div id="played">Play Song?</div>
+    </div>
     <div class="song-requests">
       <ul>
         {% for song_request in requests %} {% if not song_request.played %}
         <li>
           <div class="song-info">{{song_request.song.display_info()}}</div>
-          <div>
+          <div class="user-info">
             <a href="/users/{{song_request.user.id}}"
               ><span>{{song_request.user.username}}</span></a
             >
             <div>{{song_request.display_time()}}</div>
           </div>
           <form action="/requests/{{song_request.id}}/play" method="post">
-            <div><label for="played">Played?</label></div>
-            <div><button type="submit" id="played"><i class="fas fa-check"></i></button></div>
+            <div><label for="played"></label></div>
+            <div>
+              <button type="submit" id="played">
+                <i class="fas fa-check"></i>
+              </button>
+            </div>
           </form>
         </li>
         {% endif %} {% endfor %}
@@ -32,7 +39,7 @@
         {% for song_request in requests %} {% if song_request.played %}
         <li>
           <div class="song-info">{{song_request.song.display_info()}}</div>
-          <div>
+          <div class="user-info">
             <a href="/users/{{song_request.user.id}}"
               >{{song_request.user.username}}</a
             >
@@ -42,8 +49,9 @@
             <button type="submit">mark as unplayed</button>
           </form>
         </li>
+        {% endif %} {% endfor %}
       </ul>
     </div>
   </div>
 </div>
-{% endif %} {% endfor %} {% endblock %}
+{% endblock %}

@@ -1,15 +1,15 @@
 {% extends 'user_interface/base_ui.html' %}
 {% block content %}
-<nav>
+<nav id="ui-main-nav">
   <ul>
     <li>
-      <a href="/user-interface/{{id}}/songs">Request a song</a>
+      <a href="/user-interface/{{id}}/songs" class="a-btn btn-green">Request a song</a>
     </li>
     <li>
-      <a href="/user-interface/{{id}}/requests">View all requests</a>
+      <a href="/user-interface/{{id}}/requests" class="a-btn">View all requests</a>
     </li>
     <li>
-      <a href="/user-interface/{{id}}/my-requests">My Requests</a>
+      <a href="/user-interface/{{id}}/my-requests" class="a-btn">My Requests</a>
     </li>
   </ul>
 </nav>

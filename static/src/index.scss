@@ -98,8 +98,19 @@ h3 {
   }
 }
 
+.left-align {
+  text-align: left;
+}
+
+.side-by-side {
+  display:flex;
+  flex-direction: row;
+}
+
+
 @import "requests";
 @import "buttons";
 @import "users";
 @import "forms";
 @import "songs";
+@import "ui";

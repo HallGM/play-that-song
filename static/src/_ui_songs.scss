@@ -1,0 +1,17 @@
+#ui-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;;
+    label, input, button, a {
+        margin-right: 5px;
+    }
+}
+
+#ui-song-list {
+    li{
+    @include boxify($main-color-light);
+    text-align: center;
+    }
+}

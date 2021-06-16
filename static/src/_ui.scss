@@ -1,0 +1,57 @@
+$width: 50px;
+@media only screen and (max-width: 600px) {
+  body {
+      font-size: 20px;
+    .container {
+      padding: 0;
+      margin: 0;
+
+    }
+  }
+}
+
+a {
+  text-decoration: inherit;
+  -webkit-appearance: button;
+}
+
+.ui-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $main-color;
+  height: fit-content;
+  color: white;
+  align-items: stretch;
+  margin-bottom: 10px;
+
+  #back-button-box,
+  #profile-button-box {
+    width: 40px;
+    color: white;
+    vertical-align: middle;
+    padding: 3px;
+    font-size: 25px;
+    text-align: center;
+    a {
+      color: white;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    i {
+      color: white;
+    }
+  }
+  h1 {
+    color: white;
+    font-family: $font-family-title;
+    font-size: 30px;
+    display: block;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+@import "ui_navbar";
+@import "ui_songs";
+@import "ui_requests";

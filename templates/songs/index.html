@@ -41,9 +41,9 @@
         <form action="/songs" method="post">
           <div>{{song.display_info()}}</div>
           <div>last played {{song.display_last_played()}}</div>
-          <a href="/songs/{{song.id}}/edit" class="a-btn btn-edit">Edit</a>
+          <a href="/songs/{{song.id}}/edit" class="a-btn btn-edit"><i class="fas fa-edit"></i> Edit</a>
           <button type="submit" formaction="/songs/{{song.id}}/delete" class="btn-danger">
-            Delete
+            <i class="fas fa-trash"></i> Delete
           </button>
         </form>
 

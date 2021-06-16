@@ -1,8 +1,7 @@
 {% extends 'user_interface/base_ui.html' %} {% block content %}
-<h2>Songs</h2>
 <!-- SEARCH -->
-<form action="/user-interface/{{id}}/songs/search" method="post">
-  <label for="search">Search:</label>
+<form id="ui-search" action="/user-interface/{{id}}/songs/search" method="post">
+  <!-- <label for="search">Search:</label> -->
   <input type="text" id="search" name="search" />
   <button type="submit">Search</button>
   {% if show_clear %}
@@ -10,7 +9,7 @@
   {% endif %}
 </form>
 
-<ul>
+<ul id="ui-song-list">
   {% for song in songs %}
   <li>
     <form action="/user-interface/{{id}}/request/{{song.id}}" method="post">

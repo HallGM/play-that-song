@@ -65,6 +65,19 @@ h3 {
   margin-right: 20px;
 }
 
+.left-align {
+  text-align: left;
+}
+
+.side-by-side, #request-divider {
+  display: flex;
+  flex-direction: row;
+}
+
+.request-box div {
+  flex-grow: 1;
+}
+
 .song-requests ul {
   display: flex;
   flex-direction: column;
@@ -80,12 +93,40 @@ h3 {
   justify-content: space-between;
   align-items: center;
 }
+.song-requests ul li div {
+  flex-grow: 1;
+}
 .song-requests ul li div.song-info {
   font-weight: bold;
+  width: 180px;
+}
+.song-requests ul li div.user-info {
+  width: 180px;
+}
+.song-requests ul li form {
+  margin: 0;
+  padding: 0;
+  width: 80px;
+}
+.song-requests ul li form button, .song-requests ul li form .a-btn {
+  width: 80px;
 }
 
 .song-requests-played ul li {
   background-color: #c2c4c7;
+}
+
+#user-requests {
+  width: 500px;
+}
+
+#request-divider {
+  justify-content: space-between;
+  align-items: center;
+}
+#request-divider #played {
+  text-align: right;
+  font-weight: bold;
 }
 
 button, .a-btn,
@@ -169,6 +210,117 @@ form.search {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 20px;
+  }
+  body .container {
+    padding: 0;
+    margin: 0;
+  }
+}
+a {
+  text-decoration: inherit;
+  -webkit-appearance: button;
+}
+
+.ui-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #023e7d;
+  height: fit-content;
+  color: white;
+  align-items: stretch;
+  margin-bottom: 10px;
+}
+.ui-header #back-button-box,
+.ui-header #profile-button-box {
+  width: 40px;
+  color: white;
+  vertical-align: middle;
+  padding: 3px;
+  font-size: 25px;
+  text-align: center;
+}
+.ui-header #back-button-box a,
+.ui-header #profile-button-box a {
+  color: white;
+  display: inline-block;
+  vertical-align: middle;
+}
+.ui-header #back-button-box i,
+.ui-header #profile-button-box i {
+  color: white;
+}
+.ui-header h1 {
+  color: white;
+  font-family: "Indie Flower", cursive;
+  font-size: 30px;
+  display: block;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav#ui-main-nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 30px;
+  height: 80vh;
+}
+
+#ui-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+#ui-search label, #ui-search input, #ui-search button, #ui-search .a-btn, #ui-search a {
+  margin-right: 5px;
+}
+
+#ui-song-list li {
+  display: block;
+  background-color: #bcddff;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  text-align: center;
+}
+
+.ui-request-list li {
+  display: block;
+  background-color: #bcddff;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  text-align: center;
+}
+
+.ui-request-list#ui-played li {
+  display: block;
+  background-color: #c2c4c7;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+#ui-make-new-request {
+  position: fixed;
+  top: 90vh;
+  width: 100vw;
+  height: 50px;
+}
+#ui-make-new-request a {
+  display: block;
+  margin: auto;
+  text-align: center;
+  width: fit-content;
+  font-size: 30px;
 }
 
 /*# sourceMappingURL=index.css.map */

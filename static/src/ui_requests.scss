@@ -1,0 +1,42 @@
+.ui-request-list {
+    li{
+        @include boxify($main-color-light);
+        text-align: center;
+    }
+    
+}
+
+.ui-request-list#ui-played {
+    li{
+        @include boxify($second-color-light);
+    }
+    
+}
+
+#ui-make-new-request {
+    position: fixed;
+    top:90vh;
+    width: 100vw;
+    height: 50px;
+    a {
+        display: block;
+        margin: auto;
+        text-align: center;
+        width: fit-content;
+        font-size: 30px;
+    }
+}
+
+#ui-make-new-request {
+    position: fixed;
+    top:90vh;
+    width: 100vw;
+    height: 50px;
+    a {
+        display: block;
+        margin: auto;
+        text-align: center;
+        width: fit-content;
+        font-size: 30px;
+    }
+}
