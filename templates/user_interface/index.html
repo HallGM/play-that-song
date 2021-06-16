@@ -1,12 +1,16 @@
-{% extends 'user_interface/base_ui.html' %}
+{% extends 'user_interface/base_ui.html' %} 
 {% block content %}
 <nav id="ui-main-nav">
   <ul>
     <li>
-      <a href="/user-interface/{{id}}/songs" class="a-btn btn-green">Request a song</a>
+      <a href="/user-interface/{{id}}/songs" class="a-btn btn-green"
+        >Request a song</a
+      >
     </li>
     <li>
-      <a href="/user-interface/{{id}}/requests" class="a-btn">View all requests</a>
+      <a href="/user-interface/{{id}}/requests" class="a-btn"
+        >View all requests</a
+      >
     </li>
     <li>
       <a href="/user-interface/{{id}}/my-requests" class="a-btn">My Requests</a>
@@ -14,4 +18,4 @@
   </ul>
 </nav>
 <a href="/requests">Back to DJ view</a>
-{% endblock content %} 
+{% endblock content %}

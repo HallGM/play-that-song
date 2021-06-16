@@ -1,8 +1,8 @@
-{% extends 'user_interface/base_ui.html' %}
+{% extends 'user_interface/base_ui.html' %} 
 {% block content %}
 <p>Thanks!</p>
 <p>Your request has been made!</p>
 <p>Request Another?</p>
-<a href="/user-interface/{{id}}/songs" class="a-btn btn-green">+ Request</a>
-<a href="/user-interface/{{id}}" class="a-btn btn-edit">Done</a>
-{% endblock content %} 
+<a href="/user-interface/{{id}}/songs" class="a-btn btn-green"><i class="fas fa-plus"></i> Request</a>
+<a href="/user-interface/{{id}}" class="a-btn btn-edit"><i class="fas fa-check"></i> Done</a>
+{% endblock content %}

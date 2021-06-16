@@ -1,4 +1,5 @@
-{% extends 'main_nav.html' %} {% block nav_content %}
+{% extends 'main_nav.html' %} 
+{% block nav_content %}
 <h2>Requests</h2>
 <hr />
 <div class="request-box">
@@ -9,7 +10,8 @@
     </div>
     <div class="song-requests">
       <ul>
-        {% for song_request in requests %} {% if not song_request.played %}
+        {% for song_request in requests %} 
+        {% if not song_request.played %}
         <li>
           <div class="song-info">{{song_request.song.display_info()}}</div>
           <div class="user-info">
@@ -19,15 +21,16 @@
             <div>{{song_request.display_time()}}</div>
           </div>
           <form action="/requests/{{song_request.id}}/play" method="post">
-            <div><label for="played"></label></div>
             <div>
-              <button type="submit" id="played">
+              <button type="submit">
+                <span class="sr-only">mark as played</span>
                 <i class="fas fa-check"></i>
               </button>
             </div>
           </form>
         </li>
-        {% endif %} {% endfor %}
+        {% endif %} 
+        {% endfor %}
       </ul>
     </div>
     <a href="/requests/new">+ New Request</a>
@@ -36,7 +39,8 @@
     <h3>Played</h3>
     <div class="song-requests song-requests-played">
       <ul>
-        {% for song_request in requests %} {% if song_request.played %}
+        {% for song_request in requests %} 
+        {% if song_request.played %}
         <li>
           <div class="song-info">{{song_request.song.display_info()}}</div>
           <div class="user-info">
@@ -46,10 +50,11 @@
             <div>{{song_request.display_time()}}</div>
           </div>
           <form action="/requests/{{song_request.id}}/unplay" method="post">
-            <button type="submit">mark as unplayed</button>
+            <button id="unplay" type="submit"><i class="fas fa-undo"></i> Unplay</button>
           </form>
         </li>
-        {% endif %} {% endfor %}
+        {% endif %} 
+        {% endfor %}
       </ul>
     </div>
   </div>

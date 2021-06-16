@@ -76,15 +76,3 @@ request2 = Request(song6, user2, datetime.today())
 
 request_repository.save(request1)
 request_repository.save(request2)
-
-# print(request_repository.select_by_user(user1.id))
-
-# print(request1.display_time())
-
-# print(artist_repository.select_all())
-# print([vars(item) for item in song_repository.select_all()])
-# users = user_repository.select_all()
-# print([vars(item) for item in users])
-# print([vars(item) for item in request_repository.select_all()])
-
-# song_repository.search("j")

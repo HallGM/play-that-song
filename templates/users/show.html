@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% block content %}
 <a href="/users" class="a-btn"
   ><i class="fas fa-long-arrow-alt-left"></i> Back</a
 >
@@ -14,9 +15,17 @@
   </ul>
 </div>
 <div class="side-by-side">
-  <a href="/users/{{user.id}}/edit" class="a-btn btn-edit"><i class="fas fa-edit"></i> Edit</a>
+  <a href="/users/{{user.id}}/edit" class="a-btn btn-edit"
+    ><i class="fas fa-edit"></i> Edit</a
+  >
   <form method="POST">
-    <button type="submit" formaction="/users/{{user.id}}/delete" class="btn-danger"><i class="fas fa-trash"></i> Delete</button>
+    <button
+      type="submit"
+      formaction="/users/{{user.id}}/delete"
+      class="btn-danger"
+    >
+      <i class="fas fa-trash"></i> Delete
+    </button>
   </form>
 </div>
 <a href="/user-interface/{{user.id}}">use app as this user</a>

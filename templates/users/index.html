@@ -1,4 +1,5 @@
-{% extends 'main_nav.html' %} {% block nav_content %}
+{% extends 'main_nav.html' %} 
+{% block nav_content %}
 <h2>Users</h2>
 <div class="users">
   <div>
@@ -7,7 +8,9 @@
       <li>
         <a href="/users/{{user.id}}">{{user.username}}</a>
         <form method="post">
-          <a href="/users/{{user.id}}/edit" class="a-btn btn-edit"><i class="fas fa-edit"></i> Edit</a>
+          <a href="/users/{{user.id}}/edit" class="a-btn btn-edit"
+            ><i class="fas fa-edit"></i> Edit</a
+          >
           <button
             type="submit"
             formaction="/users/{{user.id}}/delete"
@@ -29,7 +32,7 @@
       <input type="text" id="username" name="username" />
       <label for="bio">Bio:</label>
       <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
-      <button type="submit">Add</button>
+      <button type="submit"><i class="fas fa-plus"></i> Add</button>
     </form>
   </div>
 </div>

@@ -1,16 +1,16 @@
-{% extends 'skeleton.html' %} {% block base %}
+{% extends 'skeleton.html' %} 
+{% block base %}
 <header class="ui-header">
   <div id='back-button-box'>
     {% if back_button is not none %}
-    <a href="{{back_button}}"><i class="fas fa-chevron-left"></i></a>
+    <a href="{{back_button}}"><span class="sr-only">back</span><i class="fas fa-chevron-left"></i></a>
     {% endif %}
   </div>
   <h1>PLAY THAT SONG!</h1>
   <div id='profile-button-box'>
-
   {% if not hide_profile %}
-  <a href="/user-interface/{{id}}/profile"><i class="fas fa-user"></i></a>
+  <a href="/user-interface/{{id}}/profile"><span class="sr-only">profile</span><i class="fas fa-user"></i></a>
   {% endif %}
 </header>
-
-{% block content %}{% endblock content %} {% endblock base %}
+{% block content %}{% endblock content %} 
+{% endblock base %}

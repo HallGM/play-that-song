@@ -1,22 +1,31 @@
-{% extends 'user_interface/base_ui.html' %} {% block content %}
+{% extends 'user_interface/base_ui.html' %} 
+{% block content %}
 <ul class="ui-request-list" id="ui-unplayed">
-  {% for song_request in requests %} {% if not song_request.played %}
+  {% for song_request in requests %} 
+  {% if not song_request.played %}
   <li>
     <div><strong>{{song_request.song.display_info()}}</strong></div>
-    <div><em>{{song_request.user.username}}</em></div>
-    <div>{{song_request.display_time()}}</div>
+    <div>by {{song_request.user.username}}</div>
+    <div><em>{{song_request.display_time()}}</em></div>
   </li>
-  {% endif %} {% endfor %}
+  {% endif %} 
+  {% endfor %}
 </ul>
-<div id="ui-make-new-request"><a href="/user-interface/{{id}}/songs" class="a-btn btn-green" >+ New Request</a></div>
+<div id="ui-make-new-request">
+  <a href="/user-interface/{{id}}/songs" class="a-btn btn-green"
+    ><i class="fas fa-plus"></i> New Request</a
+  >
+</div>
 <h3>Played</h3>
 <ul class="ui-request-list" id="ui-played">
-  {% for song_request in requests %} {% if song_request.played %}
+  {% for song_request in requests %} 
+  {% if song_request.played %}
   <li>
     <div><strong>{{song_request.song.display_info()}}</strong></div>
-    <div><em>{{song_request.user.username}}</em></div>
-    <div>{{song_request.display_time()}}</div>
+    <div>by {{song_request.user.username}}</div>
+    <div><em>{{song_request.display_time()}}</em></div>
   </li>
-  {% endif %} {% endfor %}
+  {% endif %} 
+  {% endfor %}
 </ul>
 {% endblock content %}

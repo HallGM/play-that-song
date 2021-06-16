@@ -1,10 +1,11 @@
-{% extends 'main_nav.html' %} {% block nav_content %}
+{% extends 'main_nav.html' %} 
+{% block nav_content %}
 <h2>Songs</h2>
 <!-- SEARCH -->
 <div class="song-main">
   <div>
     <form action="/songs/search" method="post" class="search">
-      <label for="search">Search:</label>
+      <label for="search"><span class="sr-only">Search:</span></label>
       <input type="text" id="search" name="search" />
       <button type="submit"><i class="fas fa-search"></i> Search</button>
       {% if show_clear %}
@@ -15,9 +16,11 @@
     <ul>
       {% for song in songs %}
       <li>
-        {# EDIT #} {% if edit == song.id %}
+        {# EDIT #} 
+        {% if edit == song.id %}
         <form action="/songs/{{edit}}" method="post">
           <div>
+            <label for="title_edit"><span class="sr-only">song title</span></label>
             <input
               type="text"
               id="title_edit"
@@ -25,24 +28,36 @@
               value="{{song.title}}"
             />
             by
+            <label for="artist_edit"><span class="sr-only">art  ist</span></label>
             <select name="artist_id" id="artist_edit">
-              {% for artist in artists %} {% if song.artist.id == artist.id %}
+              {% for artist in artists %} 
+              {% if song.artist.id == artist.id %}
               <option value="{{ artist.id }}" selected>
                 {{ artist.name }}
               </option>
               {% else %}>
               <option value="{{ artist.id }}">{{ artist.name }}</option>
-              {% endif %} {% endfor %}
+              {% endif %} 
+              {% endfor %}
             </select>
           </div>
-          <button type="submit" class='btn-green'><i class="fas fa-save"></i> Save</button>
+          <button type="submit" class="btn-green">
+            <i class="fas fa-save"></i> Save
+          </button>
         </form>
-        {% else %} {# SHOW #}
+        {% else %} 
+        {# SHOW #}
         <form action="/songs" method="post">
           <div>{{song.display_info()}}</div>
           <div>last played {{song.display_last_played()}}</div>
-          <a href="/songs/{{song.id}}/edit" class="a-btn btn-edit"><i class="fas fa-edit"></i> Edit</a>
-          <button type="submit" formaction="/songs/{{song.id}}/delete" class="btn-danger">
+          <a href="/songs/{{song.id}}/edit" class="a-btn btn-edit"
+            ><i class="fas fa-edit"></i> Edit</a
+          >
+          <button
+            type="submit"
+            formaction="/songs/{{song.id}}/delete"
+            class="btn-danger"
+          >
             <i class="fas fa-trash"></i> Delete
           </button>
         </form>
@@ -67,7 +82,7 @@
         <option value="{{ artist.id }}">{{ artist.name }}</option>
         {% endfor %}
       </select>
-      <button type="submit">Save</button>
+      <button type="submit"><i class="fas fa-plus"></i> Add Song</button>
     </form>
   </div>
 </div>

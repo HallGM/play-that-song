@@ -1,27 +1,31 @@
-{% extends 'base.html' %} {% block nav %}
+{% extends 'base.html' %} 
+{% block nav %}
 <nav class="main-nav">
   <ul>
     <li>
       {% if selected == "requests" %}
-      <a href="/requests" class="selected">Requests</a>
+      <a href="/requests" class="selected"
+        ><i class="fas fa-hand-paper"></i> Requests</a
+      >
       {% else %}
-      <a href="/requests">Requests</a>
+      <a href="/requests"><i class="fas fa-hand-paper"></i> Requests</a>
       {% endif %}
     </li>
     <li>
       {% if selected == "users" %}
-      <a href="/users" class="selected">Users</a>
+      <a href="/users" class="selected"><i class="fas fa-users"></i> Users</a>
       {% else %}
-      <a href="/users">Users</a>
+      <a href="/users"><i class="fas fa-users"></i> Users</a>
       {% endif %}
     </li>
     <li>
       {% if selected == "songs" %}
-      <a href="/songs" class="selected">Songs</a>
+      <a href="/songs" class="selected"><i class="fas fa-music"></i> Songs</a>
       {% else %}
-      <a href="/songs">Songs</a>
+      <a href="/songs"><i class="fas fa-music"></i> Songs</a>
       {% endif %}
     </li>
   </ul>
 </nav>
-{% block nav_content %} {% endblock nav_content %} {% endblock nav %}
+{% block nav_content %} {% endblock nav_content %} 
+{% endblock nav %}

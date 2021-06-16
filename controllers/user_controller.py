@@ -10,7 +10,6 @@ users_blueprint = Blueprint("users", __name__)
 @users_blueprint.route("/users")
 def users():
     users = user_repository.select_all()
-    # print([vars(item) for item in users])
     return render_template("/users/index.html", users=users, selected="users")
 
 # SHOW

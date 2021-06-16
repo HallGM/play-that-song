@@ -1,26 +1,25 @@
-{% extends 'user_interface/base_ui.html' %} {% block content %}
+{% extends 'user_interface/base_ui.html' %} 
+{% block content %}
 <!-- SEARCH -->
 <form id="ui-search" action="/user-interface/{{id}}/songs/search" method="post">
-  <!-- <label for="search">Search:</label> -->
+  <label for="search"><span class="sr-only">Search:</span></label>
   <input type="text" id="search" name="search" />
   <button type="submit"><i class="fas fa-search"></i> Search</button>
   {% if show_clear %}
   <a href="/user-interface/{{id}}/songs">Clear Search</a>
   {% endif %}
 </form>
-
 <ul id="ui-song-list">
   {% for song in songs %}
   <li>
     <form action="/user-interface/{{id}}/request/{{song.id}}" method="post">
       <div>{{song.display_info()}}</div>
-      <button type="submit">Request this song</button>
+      <button type="submit">Request</button>
     </form>
   </li>
-
   {% endfor %}
 </ul>
 {% if no_songs %}
-  <p>none...</p>
-{% endif %}
+<p>none...</p>
+{% endif %} 
 {% endblock content %}
