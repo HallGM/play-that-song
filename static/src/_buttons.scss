@@ -1,4 +1,7 @@
-// normalize
+a {
+  // background-color: green;
+}
+
 button,
 input,
 optgroup,
@@ -6,13 +9,14 @@ select,
 textarea {
   font-family: inherit;
   font-size: 100%;
-  line-height: 1.15;
   margin: 0;
 }
 
 button,
+[type="submit"],
+[type="reset"],
 [type="submit"] {
-  -webkit-appearance: button;
+  -webkit-appearance: none;
   background-color: $main-color;
   color: white;
   border: none;
@@ -39,6 +43,5 @@ button:hover,
 .a-btn {
   @extend button;
   text-decoration: inherit;
-  -webkit-appearance: button;
   margin-right: 5px;
 }

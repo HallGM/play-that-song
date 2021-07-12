@@ -149,13 +149,13 @@ select,
 textarea {
   font-family: inherit;
   font-size: 100%;
-  line-height: 1.15;
   margin: 0;
 }
 
 button, .a-btn,
-[type=submit] {
-  -webkit-appearance: button;
+[type=submit],
+[type=reset] {
+  -webkit-appearance: none;
   background-color: #023e7d;
   color: white;
   border: none;
@@ -181,7 +181,6 @@ button:hover, .a-btn:hover,
 
 .a-btn {
   text-decoration: inherit;
-  -webkit-appearance: button;
   margin-right: 5px;
 }
 
@@ -201,7 +200,9 @@ form.form {
   display: flex;
   flex-direction: column;
 }
-form.form input, form.form textarea, form.form select {
+form.form input,
+form.form textarea,
+form.form select {
   margin-bottom: 10px;
 }
 
@@ -224,6 +225,7 @@ form.search {
   justify-content: space-between;
   align-items: center;
 }
+
 @media only screen and (max-width: 600px) {
   body {
     font-size: 20px;
@@ -235,7 +237,6 @@ form.search {
 }
 a {
   text-decoration: inherit;
-  -webkit-appearance: button;
 }
 
 .ui-header {
@@ -292,7 +293,11 @@ nav#ui-main-nav ul {
   flex-wrap: wrap;
   margin-bottom: 10px;
 }
-#ui-search label, #ui-search input, #ui-search button, #ui-search .a-btn, #ui-search a {
+#ui-search label,
+#ui-search input,
+#ui-search button,
+#ui-search .a-btn,
+#ui-search a {
   margin-right: 5px;
 }
 
