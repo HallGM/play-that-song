@@ -1,11 +1,15 @@
 from models.artist import Artist
 from db.run_sql import run_sql
 
-
+# DEFINE Function save(artist)
 def save(artist):
+    # SAVE (SQL command: insert artist into database and return id) IN sql
     sql = "INSERT INTO artists( name ) VALUES ( %s ) RETURNING id"
+    # SAVE [name of artist] IN values
     values = [artist.name]
+    # RUN command and SAVE returned id IN results
     results = run_sql(sql, values)
+    # ADD id TO artist
     artist.id = results[0]["id"]
 
 
