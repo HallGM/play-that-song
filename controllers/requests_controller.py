@@ -1,3 +1,4 @@
+from console import populate_db
 from datetime import datetime, time
 from flask import render_template, request, redirect, Blueprint
 from models.request import Request
@@ -53,3 +54,8 @@ def request_unplay(id):
     song_request.mark_as_unplayed()
     request_repository.update(song_request)
     return redirect("/requests")
+
+@requests_blueprint.route("/populate")
+def populate():
+    populate_db
+    return "done"
