@@ -5,7 +5,7 @@ import psycopg2.extras as ext
 if ('DATA_URL' in os.environ):
     DATABASE_URL = os.environ['DATABASE_URL']
 else:
-    DATABASE_URL = "dbname='task_manager'"
+    DATABASE_URL = "dbname='song_requestor'"
 
 def run_sql(sql, values=None):
     connection = None
