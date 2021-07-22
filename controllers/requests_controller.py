@@ -57,5 +57,5 @@ def request_unplay(id):
 
 @requests_blueprint.route("/populate")
 def populate():
-    populate_db
+    populate_db()
     return "done"
